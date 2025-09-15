@@ -1,4 +1,4 @@
-# mobcli
+# 🛠️ mobcli
 
 Command-line client for interacting with the Mobilus Cosmo GTW.
 
