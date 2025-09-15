@@ -1,0 +1,21 @@
+#pragma once
+
+#include "ClientCommonCommand.h"
+
+#include <cxxopts.hpp>
+
+namespace mobcli::commands {
+
+class NetworkSettingsCommand final : public ClientCommonCommand {
+public:
+    NetworkSettingsCommand();
+
+    int execute(int argc, char* argv[]) override;
+    std::string_view name() const override { return "network-settings"; }
+    std::string_view description() const override { return "prints cosmo gtw network settings"; }
+
+private:
+    cxxopts::Options mOpts;
+};
+
+}
