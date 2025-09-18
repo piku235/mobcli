@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(mobcli VERSION 0.1.0)
+project(mobcli VERSION 0.1.1)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -13,7 +13,7 @@ FetchContent_MakeAvailable(cxxopts)
 
 FetchContent_Declare(
   mobgtw
-  URL https://github.com/piku235/mobilus-gtw-client/archive/refs/tags/v0.3.0.zip
+  URL https://github.com/piku235/mobilus-gtw-client/archive/refs/tags/v0.3.1.zip
 )
 FetchContent_MakeAvailable(mobgtw)
 
