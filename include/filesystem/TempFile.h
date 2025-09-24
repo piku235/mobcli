@@ -31,7 +31,7 @@ public:
     TempFile& operator=(TempFile&& other) = delete;
 
     void write(const char* buf, size_t size) { ::write(mFd, buf, size); }
-    const std::string path() const { return mPath; }
+    const std::string& path() const { return mPath; }
 
 private:
     static constexpr int kInvalidFd = -1;
