@@ -8,8 +8,8 @@
 #include <iostream>
 
 using namespace mobcli::mobilus_gtw_client;
-using namespace mobcli::filesystem;
 using namespace jungi::mobilus_gtw_client;
+using filesystem::TempFile;
 
 static constexpr size_t kMobilusMqttPort = 8883;
 

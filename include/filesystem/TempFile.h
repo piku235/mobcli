@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <utility>
 
-namespace mobcli::filesystem {
+namespace filesystem {
 
 class TempFile final {
 public:
