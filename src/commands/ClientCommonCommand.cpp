@@ -10,7 +10,7 @@
 using namespace mobcli::mobilus_gtw_client;
 using namespace jungi::mobilus_gtw_client;
 
-static const size_t kMobilusMqttPort = 8883;
+static constexpr size_t kMobilusMqttPort = 8883;
 
 static void printRawMessage(const Envelope& envelope)
 {
@@ -31,7 +31,7 @@ void ClientCommonCommand::addGeneralOptions(cxxopts::Options& opts)
 {
     // clang-format off
     opts.add_options("General", {
-        {"h,host", "mobilus hostname/IP", cxxopts::value<std::string>()->default_value(Utils::getEnvOr("MOBILUS_HOST", ""))},
+        {"h,host", "mobilus hostname/IP", cxxopts::value<std::string>()->default_value(Utils::getEnvOr("MOBILUS_HOST", "mobilus"))},
         {"u,username", "mobilus username/login", cxxopts::value<std::string>()->default_value(Utils::getEnvOr("MOBILUS_USERNAME", "admin"))},
         {"p,password", "mobilus password", cxxopts::value<std::string>()->default_value(Utils::getEnvOr("MOBILUS_PASSWORD", "admin"))},
         {"v,verbose", "prints extra logs", cxxopts::value<bool>()->default_value("false")},
