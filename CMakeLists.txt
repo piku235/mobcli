@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(mobcli VERSION 0.1.1)
+project(mobcli VERSION 0.2.0)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -18,10 +18,11 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(mobgtw)
 
 set(MOBILUS_CA_FILE "${mobgtw_SOURCE_DIR}/certs/mobilelabs_mobilus_ca.crt")
+file(READ ${MOBILUS_CA_FILE} MOBILUS_CACERT)
 
 configure_file(
-  include/config.h.in
-  "${CMAKE_CURRENT_BINARY_DIR}/include/config.h"
+  src/mobilus_cert.h.in
+  "${CMAKE_CURRENT_BINARY_DIR}/src/mobilus_cert.h"
   @ONLY
 )
 
@@ -43,7 +44,7 @@ target_include_directories(mobcli
   PRIVATE
     src
     include
-    ${CMAKE_CURRENT_BINARY_DIR}/include
+    ${CMAKE_CURRENT_BINARY_DIR}/src
 )
 
 target_link_libraries(mobcli

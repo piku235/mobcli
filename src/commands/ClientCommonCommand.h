@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Command.h"
+#include "filesystem/TempFile.h"
 #include "jungi/mobilus_gtw_client/MqttMobilusGtwClient.h"
 #include "jungi/mobilus_gtw_client/io/EventLoop.h"
 
@@ -16,6 +17,10 @@ protected:
     void addGeneralOptions(cxxopts::Options& opts);
     std::unique_ptr<mobgtw::logging::Logger> mqttMobilusGtwClientLogger(cxxopts::ParseResult r);
     std::unique_ptr<mobgtw::MqttMobilusGtwClient> mqttMobilusGtwClient(cxxopts::ParseResult r, mobgtw::io::EventLoop* loop = nullptr);
+
+private:
+    mobcli::filesystem::TempFile loadMobilusCaCert();
+
 };
 
 }

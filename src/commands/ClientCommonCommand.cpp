@@ -1,13 +1,14 @@
+#include "mobilus_cert.h"
 #include "ClientCommonCommand.h"
 #include "Utils.h"
-#include "config.h"
+#include "mobilus_gtw_client/StderrLogger.h"
 #include "jungi/mobilus_gtw_client/MqttDsn.h"
 #include "jungi/mobilus_gtw_client/proto/DeviceSettingsRequest.pb.h"
-#include "mobilus_gtw_client/StderrLogger.h"
 
 #include <iostream>
 
 using namespace mobcli::mobilus_gtw_client;
+using namespace mobcli::filesystem;
 using namespace jungi::mobilus_gtw_client;
 
 static constexpr size_t kMobilusMqttPort = 8883;
@@ -42,11 +43,13 @@ void ClientCommonCommand::addGeneralOptions(cxxopts::Options& opts)
 
 std::unique_ptr<MqttMobilusGtwClient> ClientCommonCommand::mqttMobilusGtwClient(cxxopts::ParseResult r, io::EventLoop* loop)
 {
+    static auto mobilusCaCertFile = loadMobilusCaCert();
     static StderrLogger logger;
+
     auto builder = MqttMobilusGtwClient::builder();
 
     builder
-        .dsn({ true, std::nullopt, std::nullopt, r["host"].as<std::string>(), ::kMobilusMqttPort, ::kMobilusCaFile, false })
+        .dsn({ true, std::nullopt, std::nullopt, r["host"].as<std::string>(), ::kMobilusMqttPort, mobilusCaCertFile.path(), false })
         .login({ r["username"].as<std::string>(), r["password"].as<std::string>() })
         .useKeepAliveMessage(std::make_unique<proto::DeviceSettingsRequest>())
         .useLogger(&logger);
@@ -60,6 +63,14 @@ std::unique_ptr<MqttMobilusGtwClient> ClientCommonCommand::mqttMobilusGtwClient(
     }
 
     return builder.build();
+}
+
+TempFile ClientCommonCommand::loadMobilusCaCert()
+{
+    auto cacert = TempFile::unique("/tmp/mobilus_ca_XXXXXX");
+    cacert.write(kMobilusCaCert, sizeof(kMobilusCaCert));
+
+    return cacert;
 }
 
 }
