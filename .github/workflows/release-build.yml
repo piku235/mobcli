@@ -14,26 +14,29 @@ jobs:
     steps:
     - uses: actions/checkout@v5
 
-    - name: Paths
-      id: paths
+    - name: Common strings
+      id: strings
       shell: bash
       run: |
-        echo "build=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
+        echo "build-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
+        echo "exec=${{ github.workspace }}/build/mobcli-linux-$(uname -m)" >> "$GITHUB_OUTPUT"
 
     - name: Install dependencies
       run: sudo apt-get update && sudo apt-get install -y libmosquitto-dev libssl-dev
 
     - name: Configure CMake
-      run: cmake -DCMAKE_BUILD_TYPE=Release -B ${{ steps.paths.outputs.build }} -S ${{ github.workspace }}
+      run: cmake -DCMAKE_BUILD_TYPE=Release -B ${{ steps.strings.outputs.build-dir }} -S ${{ github.workspace }}
 
     - name: Build
-      run: cmake --build ${{ steps.paths.outputs.build }}
+      run: cmake --build ${{ steps.strings.outputs.build-dir }}
 
     - name: Strip
-      run: strip ${{ steps.paths.outputs.build }}/mobcli
+      run: strip ${{ steps.strings.outputs.build-dir }}/mobcli
+
+    - name: Rename
+      run: mv ${{ steps.strings.outputs.build-dir }}/mobcli ${{ steps.strings.outputs.exec }}
 
     - name: Upload
       uses: softprops/action-gh-release@v2
       with:
-        files: |
-          ${{ steps.paths.outputs.build }}/mobcli
+        files: ${{ steps.strings.outputs.exec }}
