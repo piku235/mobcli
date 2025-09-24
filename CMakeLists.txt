@@ -13,7 +13,7 @@ FetchContent_MakeAvailable(cxxopts)
 
 FetchContent_Declare(
   mobgtw
-  URL https://github.com/piku235/mobilus-gtw-client/archive/refs/tags/v0.3.1.zip
+  URL https://github.com/piku235/mobilus-gtw-client/archive/refs/heads/main.zip
 )
 FetchContent_MakeAvailable(mobgtw)
 
