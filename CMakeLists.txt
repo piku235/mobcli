@@ -7,7 +7,7 @@ include(cmake/CPM.cmake)
 
 CPMAddPackage("gh:jarro2783/cxxopts@3.3.1")
 CPMAddPackage(
-  URI "gh:piku235/mobilus-gtw-client@0.6.0"
+  URI "gh:piku235/mobilus-gtw-client@0.7.0"
   NAME mobgtw
 )
 
