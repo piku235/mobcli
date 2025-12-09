@@ -1,13 +1,13 @@
 #include "SubscribeCommand.h"
-#include "jungi/mobilus_gtw_client/MessageType.h"
-#include "jungi/mobilus_gtw_client/io/SelectEventLoop.h"
-#include "jungi/mobilus_gtw_client/proto/CallEvents.pb.h"
-#include "jungi/mobilus_gtw_client/proto/DeviceSettingsRequest.pb.h"
+#include "jungi/mobgtw/MessageType.h"
+#include "jungi/mobgtw/io/SelectEventLoop.h"
+#include "jungi/mobgtw/proto/CallEvents.pb.h"
+#include "jungi/mobgtw/proto/DeviceSettingsRequest.pb.h"
 
 #include <csignal>
 #include <iostream>
 
-using namespace jungi::mobilus_gtw_client;
+using namespace jungi::mobgtw;
 
 static MqttMobilusGtwClient* sMobilusGtwClient = nullptr;
 
@@ -49,7 +49,7 @@ int SubscribeCommand::execute(int argc, char* argv[])
     signal(SIGINT, handleSignal);
     signal(SIGTERM, handleSignal);
 
-    client->messageBus().subscribe<proto::CallEvents>(MessageType::CallEvents, printCallEvents);
+    client->messageBus().subscribe<proto::CallEvents>(printCallEvents);
 
     std::cout << "listening..." << std::endl;
     loop.run();

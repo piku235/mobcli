@@ -1,11 +1,11 @@
 #include "DeviceSettingsCommand.h"
-#include "jungi/mobilus_gtw_client/Action.h"
-#include "jungi/mobilus_gtw_client/proto/DeviceSettingsRequest.pb.h"
-#include "jungi/mobilus_gtw_client/proto/DeviceSettingsResponse.pb.h"
+#include "jungi/mobgtw/Action.h"
+#include "jungi/mobgtw/proto/DeviceSettingsRequest.pb.h"
+#include "jungi/mobgtw/proto/DeviceSettingsResponse.pb.h"
 
 #include <iostream>
 
-using namespace jungi::mobilus_gtw_client;
+using namespace jungi::mobgtw;
 
 namespace mobcli::commands {
 

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Command.h"
-#include "jungi/mobilus_gtw_client/MqttMobilusGtwClient.h"
-#include "jungi/mobilus_gtw_client/io/EventLoop.h"
+#include "jungi/mobgtw/MqttMobilusGtwClient.h"
+#include "jungi/mobgtw/io/EventLoop.h"
 
 #include <cxxopts.hpp>
 #include <filesystem/TempFile.h>
@@ -10,13 +10,11 @@
 
 namespace mobcli::commands {
 
-namespace mobgtw = jungi::mobilus_gtw_client;
-
 class ClientCommonCommand : public Command {
 protected:
     void addGeneralOptions(cxxopts::Options& opts);
-    std::unique_ptr<mobgtw::logging::Logger> mqttMobilusGtwClientLogger(cxxopts::ParseResult r);
-    std::unique_ptr<mobgtw::MqttMobilusGtwClient> mqttMobilusGtwClient(cxxopts::ParseResult r, mobgtw::io::EventLoop* loop = nullptr);
+    std::unique_ptr<jungi::mobgtw::logging::Logger> mqttMobilusGtwClientLogger(cxxopts::ParseResult r);
+    std::unique_ptr<jungi::mobgtw::MqttMobilusGtwClient> mqttMobilusGtwClient(cxxopts::ParseResult r, jungi::mobgtw::io::EventLoop* loop = nullptr);
 
 private:
     ::filesystem::TempFile loadMobilusCaCert();

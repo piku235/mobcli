@@ -4,7 +4,7 @@
 
 #include <cxxopts.hpp>
 
-namespace jungi::mobilus_gtw_client::proto {
+namespace jungi::mobgtw::proto {
 class CallEvents;
 }
 
@@ -21,7 +21,7 @@ public:
 private:
     cxxopts::Options mOpts;
 
-    static void printCallEvents(const jungi::mobilus_gtw_client::proto::CallEvents& callEvents);
+    static void printCallEvents(const jungi::mobgtw::proto::CallEvents& callEvents);
 };
 
 }

@@ -1,11 +1,11 @@
 #include "DeviceListCommand.h"
-#include "jungi/mobilus_gtw_client/proto/DevicesListRequest.pb.h"
-#include "jungi/mobilus_gtw_client/proto/DevicesListResponse.pb.h"
+#include "jungi/mobgtw/proto/DevicesListRequest.pb.h"
+#include "jungi/mobgtw/proto/DevicesListResponse.pb.h"
 
 #include <iostream>
 #include <sstream>
 
-using namespace jungi::mobilus_gtw_client;
+using namespace jungi::mobgtw;
 
 namespace mobcli::commands {
 

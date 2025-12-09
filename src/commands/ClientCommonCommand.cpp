@@ -1,14 +1,14 @@
 #include "mobilus_cert.h"
 #include "ClientCommonCommand.h"
 #include "Utils.h"
-#include "mobilus_gtw_client/StderrLogger.h"
-#include "jungi/mobilus_gtw_client/MqttDsn.h"
-#include "jungi/mobilus_gtw_client/proto/DeviceSettingsRequest.pb.h"
+#include "mobgtw/StderrLogger.h"
+#include "jungi/mobgtw/MqttDsn.h"
+#include "jungi/mobgtw/proto/DeviceSettingsRequest.pb.h"
 
 #include <iostream>
 
-using namespace mobcli::mobilus_gtw_client;
-using namespace jungi::mobilus_gtw_client;
+using namespace mobcli::mobgtw;
+using namespace jungi::mobgtw;
 using filesystem::TempFile;
 
 static constexpr size_t kMobilusMqttPort = 8883;

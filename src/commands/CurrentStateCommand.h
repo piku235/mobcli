@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ClientCommonCommand.h"
-#include "jungi/mobilus_gtw_client/proto/Event.pb.h"
+#include "jungi/mobgtw/proto/Event.pb.h"
 
 #include <cxxopts.hpp>
 

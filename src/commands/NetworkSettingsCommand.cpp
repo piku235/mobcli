@@ -1,11 +1,11 @@
 #include "NetworkSettingsCommand.h"
-#include "jungi/mobilus_gtw_client/Action.h"
-#include "jungi/mobilus_gtw_client/proto/NetworkSettingsRequest.pb.h"
-#include "jungi/mobilus_gtw_client/proto/NetworkSettingsResponse.pb.h"
+#include "jungi/mobgtw/Action.h"
+#include "jungi/mobgtw/proto/NetworkSettingsRequest.pb.h"
+#include "jungi/mobgtw/proto/NetworkSettingsResponse.pb.h"
 
 #include <iostream>
 
-using namespace jungi::mobilus_gtw_client;
+using namespace jungi::mobgtw;
 
 namespace mobcli::commands {
 

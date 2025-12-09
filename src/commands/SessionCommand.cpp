@@ -4,7 +4,7 @@
 #include <cstdint>
 #include <iostream>
 
-using namespace jungi::mobilus_gtw_client;
+using namespace jungi::mobgtw;
 
 namespace mobcli::commands {
 

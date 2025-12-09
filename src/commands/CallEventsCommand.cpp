@@ -1,11 +1,11 @@
 #include "CallEventsCommand.h"
-#include "jungi/mobilus_gtw_client/EventNumber.h"
-#include "jungi/mobilus_gtw_client/Platform.h"
-#include "jungi/mobilus_gtw_client/proto/CallEvents.pb.h"
+#include "jungi/mobgtw/EventNumber.h"
+#include "jungi/mobgtw/Platform.h"
+#include "jungi/mobgtw/proto/CallEvents.pb.h"
 
 #include <iostream>
 
-using namespace jungi::mobilus_gtw_client;
+using namespace jungi::mobgtw;
 
 namespace mobcli::commands {
 

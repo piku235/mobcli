@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-namespace mobcli::mobilus_gtw_client {
+namespace mobcli::mobgtw {
 
 void StderrLogger::error(const std::string& message)
 {

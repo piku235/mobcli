@@ -1,10 +1,10 @@
 #include "CurrentStateCommand.h"
-#include "jungi/mobilus_gtw_client/proto/CurrentStateRequest.pb.h"
-#include "jungi/mobilus_gtw_client/proto/CurrentStateResponse.pb.h"
+#include "jungi/mobgtw/proto/CurrentStateRequest.pb.h"
+#include "jungi/mobgtw/proto/CurrentStateResponse.pb.h"
 
 #include <iostream>
 
-using namespace jungi::mobilus_gtw_client;
+using namespace jungi::mobgtw;
 
 namespace mobcli::commands {
 
