@@ -1,6 +1,7 @@
 #include "DeviceListCommand.h"
-#include "jungi/mobgtw/proto/DevicesListRequest.pb.h"
-#include "jungi/mobgtw/proto/DevicesListResponse.pb.h"
+
+#include <jungi/mobgtw/proto/DevicesListRequest.pb.h>
+#include <jungi/mobgtw/proto/DevicesListResponse.pb.h>
 
 #include <iostream>
 #include <sstream>

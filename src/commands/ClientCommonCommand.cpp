@@ -2,8 +2,9 @@
 #include "ClientCommonCommand.h"
 #include "Utils.h"
 #include "mobgtw/StderrLogger.h"
-#include "jungi/mobgtw/MqttDsn.h"
-#include "jungi/mobgtw/proto/DeviceSettingsRequest.pb.h"
+
+#include <jungi/mobgtw/MqttDsn.h>
+#include <jungi/mobgtw/proto/DeviceSettingsRequest.pb.h>
 
 #include <iostream>
 

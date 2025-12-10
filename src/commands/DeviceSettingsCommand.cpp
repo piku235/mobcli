@@ -1,7 +1,8 @@
 #include "DeviceSettingsCommand.h"
-#include "jungi/mobgtw/Action.h"
-#include "jungi/mobgtw/proto/DeviceSettingsRequest.pb.h"
-#include "jungi/mobgtw/proto/DeviceSettingsResponse.pb.h"
+
+#include <jungi/mobgtw/Action.h>
+#include <jungi/mobgtw/proto/DeviceSettingsRequest.pb.h>
+#include <jungi/mobgtw/proto/DeviceSettingsResponse.pb.h>
 
 #include <iostream>
 

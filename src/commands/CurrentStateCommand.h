@@ -1,8 +1,8 @@
 #pragma once
 
 #include "ClientCommonCommand.h"
-#include "jungi/mobgtw/proto/Event.pb.h"
 
+#include <jungi/mobgtw/proto/Event.pb.h>
 #include <cxxopts.hpp>
 
 namespace mobcli::commands {

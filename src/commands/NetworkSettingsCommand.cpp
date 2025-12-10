@@ -1,7 +1,8 @@
 #include "NetworkSettingsCommand.h"
-#include "jungi/mobgtw/Action.h"
-#include "jungi/mobgtw/proto/NetworkSettingsRequest.pb.h"
-#include "jungi/mobgtw/proto/NetworkSettingsResponse.pb.h"
+
+#include <jungi/mobgtw/Action.h>
+#include <jungi/mobgtw/proto/NetworkSettingsRequest.pb.h>
+#include <jungi/mobgtw/proto/NetworkSettingsResponse.pb.h>
 
 #include <iostream>
 

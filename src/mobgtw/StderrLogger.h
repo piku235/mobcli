@@ -1,6 +1,6 @@
 #pragma once
 
-#include "jungi/mobgtw/logging/Logger.h"
+#include <jungi/mobgtw/logging/Logger.h>
 
 namespace mobcli::mobgtw {
 

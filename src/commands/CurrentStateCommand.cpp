@@ -1,6 +1,7 @@
 #include "CurrentStateCommand.h"
-#include "jungi/mobgtw/proto/CurrentStateRequest.pb.h"
-#include "jungi/mobgtw/proto/CurrentStateResponse.pb.h"
+
+#include <jungi/mobgtw/proto/CurrentStateRequest.pb.h>
+#include <jungi/mobgtw/proto/CurrentStateResponse.pb.h>
 
 #include <iostream>
 
