@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 include(cmake/CPM.cmake)
 
 CPMAddPackage("gh:jarro2783/cxxopts@3.3.1")
-CPMAddPackage("gh:piku235/mobgtw#main")
+CPMAddPackage("gh:piku235/mobgtw@0.9.0")
 
 set(MOBILUS_CA_FILE "${mobgtw_SOURCE_DIR}/certs/mobilelabs_mobilus_ca.crt")
 file(READ ${MOBILUS_CA_FILE} MOBILUS_CACERT)
